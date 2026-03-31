@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 給料モチベーションアプリ（プロトタイプ）</h1>
+        
+        <div class="salary-box">
+            <div>現在の稼ぎ</div>
+            <div class="salary-amount">{{ "{:,}".format(current_salary) }}円</div>
+        </div>
+        
+        <div class="target-info">
+            <div class="target-item">目標: {{ target_item }}</div>
+            <div style="color: #666;">必要金額: {{ "{:,}".format(target_price) }}円</div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ progress_percent }}%;">{{ progress_percent }}%</div>
+        </div>
+        
+        <div class="remaining">
+            あと {{ "{:,}".format(remaining) }}円！！
+        </div>
+        
+        <div class="motivation">
+            🚀 来月の独立に向けて、この調子でガンガン行こうぜ！
+        </div>
+    </div>
+</body>
+</html>
